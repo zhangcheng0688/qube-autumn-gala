@@ -93,7 +93,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "2026.09.10–10.09 Qube × Apple 金秋臻耀礼遇：净入金与有效交易手数双重达标，即可申请六档 Apple 新品好礼，含 iPhone 18 Pro Max、Apple Watch Ultra 4 等。",
+          "2026.09.15–10.14 Qube × Apple 金秋臻耀礼遇：净入金与有效交易手数双重达标，即可申请六档 Apple 新品好礼，含 iPhone 18 Pro Max、Apple Watch Ultra 4 等。",
       },
       {
         name: "keywords",
@@ -104,7 +104,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Meet the Net Deposit and trading volume targets between 10 Sep and 9 Oct 2026 to claim an Apple reward across six tiers.",
+          "Meet the Net Deposit and trading volume targets between 15 Sep and 14 Oct 2026 to claim an Apple reward across six tiers.",
       },
       { property: "og:locale", content: "zh_CN" },
       { property: "og:locale:alternate", content: "en_US" },
