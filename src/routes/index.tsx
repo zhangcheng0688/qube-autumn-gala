@@ -1,24 +1,376 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { ArrowRight, ArrowUpRight, Check, Mail, UserRound } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { content, termsSections, tiers, type Lang } from "@/content/promo";
+import heroDevices from "@/assets/hero-devices.jpg";
+import gift1 from "@/assets/gift-1.jpg";
+import gift2 from "@/assets/gift-2.jpg";
+import gift3 from "@/assets/gift-3.jpg";
+import gift4 from "@/assets/gift-4.jpg";
+import gift5 from "@/assets/gift-5.jpg";
+import gift6 from "@/assets/gift-6.jpg";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const giftImages = [gift1, gift2, gift3, gift4, gift5, gift6];
+
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Qube × Apple 金秋臻耀礼遇 | QUBE Markets" },
+      {
+        name: "description",
+        content:
+          "2026.09.15–10.14 Qube × Apple 金秋臻耀礼遇：净入金与有效交易手数双重达标，即可申请六档 Apple 新品好礼。",
+      },
+      { property: "og:title", content: "Qube × Apple 金秋臻耀礼遇 | QUBE Markets" },
+      {
+        property: "og:description",
+        content:
+          "Meet the Net Deposit and trading volume targets between 15 Sep and 14 Oct 2026 to claim an Apple reward across six tiers.",
+      },
+    ],
+  }),
+  component: Promo,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Logo({ tone = "light" }: { tone?: "light" | "dark" }) {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
+    <span
+      className={`inline-flex items-center gap-2 text-lg font-extrabold tracking-tight ${
+        tone === "light" ? "text-ink-foreground" : "text-ink"
+      }`}
     >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+      <span className="grid size-6 place-items-center rounded-sm bg-primary text-primary-foreground text-[13px] font-black">
+        Q
+      </span>
+      QUBE
+    </span>
+  );
+}
+
+function Promo() {
+  const [lang, setLang] = useState<Lang>("zh");
+  const t = content[lang];
+
+  return (
+    <div className="min-h-screen bg-background font-sans">
+      {/* Header + hero */}
+      <header className="bg-ink text-ink-foreground">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5">
+          <Logo />
+          <div className="hidden items-center gap-8 text-sm text-ink-muted md:flex">
+            {t.nav.map((item) => (
+              <a key={item.href} href={item.href} className="transition-colors hover:text-primary">
+                {item.label}
+              </a>
+            ))}
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setLang(lang === "zh" ? "en" : "zh")}
+              className="rounded-full border border-ink-border px-3 py-2 text-xs font-semibold text-ink-foreground transition-colors hover:border-primary hover:text-primary"
+            >
+              {t.langLabel}
+            </button>
+            <a
+              href="mailto:support@qubemarkets.com"
+              className="hidden items-center gap-2 rounded-full border border-ink-border px-4 py-2 text-xs font-semibold text-ink-foreground transition-colors hover:border-primary hover:text-primary sm:inline-flex"
+            >
+              {t.navCta}
+              <ArrowUpRight className="size-3.5" />
+            </a>
+          </div>
+        </nav>
+
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 pb-16 pt-6 lg:grid-cols-[1.05fr_1fr] lg:pb-24 lg:pt-10">
+          <div>
+            <p className="text-lg font-medium tracking-wide text-ink-foreground/80">
+              {t.hero.kicker}
+            </p>
+            <h1 className="mt-3 text-5xl font-black leading-[1.05] tracking-tight text-gold sm:text-6xl lg:text-7xl">
+              {t.hero.title}
+            </h1>
+            <p className="mt-6 max-w-md text-sm leading-relaxed text-ink-muted">{t.hero.lead}</p>
+
+            <div className="mt-8">
+              <p className="text-[11px] uppercase tracking-[0.2em] text-ink-muted">
+                {t.hero.periodLabel}
+              </p>
+              <p className="mt-2 text-2xl font-bold text-ink-foreground">{t.hero.period}</p>
+              <p className="mt-1 text-xs text-ink-muted">{t.hero.periodNote}</p>
+            </div>
+
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <a
+                href="#gifts"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground transition-transform hover:-translate-y-0.5"
+              >
+                {t.hero.cta}
+                <ArrowRight className="size-4" />
+              </a>
+              <a
+                href="#join"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-ink-muted transition-colors hover:text-primary"
+              >
+                {t.hero.ctaSub}
+                <ArrowUpRight className="size-4" />
+              </a>
+            </div>
+
+            <p className="mt-10 max-w-md text-[11px] leading-relaxed text-ink-muted/70">
+              {t.hero.disclaimer}
+            </p>
+          </div>
+
+          <div>
+            <img
+              src={heroDevices}
+              alt={lang === "zh" ? "Apple 新品礼遇示意图" : "Apple reward products"}
+              width={1408}
+              height={1200}
+              className="w-full"
+            />
+            <p className="mt-2 text-center text-[11px] text-ink-muted/70">{t.hero.imageNote}</p>
+          </div>
+        </div>
+      </header>
+
+      {/* Registration */}
+      <section id="join" className="mx-auto max-w-6xl px-5 py-20">
+        <p className="section-index">
+          <span className="h-px w-8 bg-primary" />
+          {t.join.index}
+        </p>
+        <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">{t.join.title}</h2>
+        <p className="mt-3 text-sm text-muted-foreground">{t.join.lead}</p>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="rounded-xl border border-border p-6">
+            <div className="flex items-start justify-between">
+              <div className="flex items-center gap-3">
+                <span className="rounded bg-primary px-2 py-1 text-[11px] font-bold text-primary-foreground">
+                  {t.join.cards[0].no}
+                </span>
+                <h3 className="text-xl font-bold">{t.join.cards[0].title}</h3>
+              </div>
+              <Mail className="size-5 text-muted-foreground" />
+            </div>
+            <p className="mt-5 text-sm text-muted-foreground">{t.join.cards[0].body}</p>
+            <a
+              href={`mailto:${t.join.cards[0].email}`}
+              className="mt-1 inline-block text-lg font-bold underline decoration-primary decoration-2 underline-offset-4"
+            >
+              {t.join.cards[0].email}
+            </a>
+            <p className="mt-6 text-xs text-muted-foreground">{t.join.cards[0].fieldLabel}</p>
+            <p className="mt-2 rounded-md border border-border bg-surface px-4 py-3 text-sm">
+              {t.join.cards[0].field}
+            </p>
+            <p className="mt-5 flex items-center gap-2 text-xs text-muted-foreground">
+              <Check className="size-4 text-foreground" />
+              {t.join.cards[0].foot}
+            </p>
+          </div>
+
+          <div className="rounded-xl border border-border bg-surface p-6">
+            <div className="flex items-start justify-between">
+              <div className="flex items-center gap-3">
+                <span className="rounded bg-primary px-2 py-1 text-[11px] font-bold text-primary-foreground">
+                  {t.join.cards[1].no}
+                </span>
+                <h3 className="text-xl font-bold">{t.join.cards[1].title}</h3>
+              </div>
+              <UserRound className="size-5 text-muted-foreground" />
+            </div>
+            <ol className="mt-6 space-y-5">
+              {t.join.cards[1].steps.map((step, i) => (
+                <li key={step} className="flex gap-4">
+                  <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full border border-border bg-background text-xs font-bold">
+                    {i + 1}
+                  </span>
+                  <span className="text-sm text-muted-foreground">{step}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+
+        <p className="mt-8 text-xs leading-relaxed text-muted-foreground">{t.join.deadline}</p>
+      </section>
+
+      {/* Gifts */}
+      <section id="gifts" className="bg-surface py-20">
+        <div className="mx-auto max-w-6xl px-5">
+          <p className="section-index">
+            <span className="h-px w-8 bg-primary" />
+            {t.gifts.index}
+          </p>
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+            {t.gifts.title}
+          </h2>
+          <p className="mt-4 max-w-3xl text-xs leading-relaxed text-muted-foreground">
+            {t.gifts.note}
+          </p>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {tiers.map((tier, i) => (
+              <article
+                key={tier.id}
+                className="flex flex-col overflow-hidden rounded-xl border border-border bg-background transition-shadow hover:shadow-[0_18px_40px_-24px_oklch(0.2_0.02_260/0.5)]"
+              >
+                <div className="flex items-center justify-between px-5 pt-5">
+                  <span className="rounded bg-primary px-2 py-1 text-[11px] font-bold text-primary-foreground">
+                    {t.gifts.tierLabel} 0{tier.id}
+                  </span>
+                  <span className="text-[11px] text-muted-foreground">
+                    {t.gifts.valueLabel} ${tier.value}
+                  </span>
+                </div>
+                <img
+                  src={giftImages[i]}
+                  alt={t.gifts.names[i]}
+                  width={800}
+                  height={640}
+                  loading="lazy"
+                  className="mx-auto h-44 w-auto object-contain py-4"
+                />
+                <div className="border-t border-border px-5 py-5">
+                  <h3 className="text-lg font-bold">{t.gifts.names[i]}</h3>
+                  <p className="mt-1 text-xs text-muted-foreground">{t.gifts.subs[i]}</p>
+                  <div className="mt-5 flex items-end justify-between border-t border-border pt-4">
+                    <div>
+                      <p className="text-[11px] text-muted-foreground">{t.gifts.depositLabel}</p>
+                      <p className="text-lg font-bold">${tier.deposit}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-[11px] text-muted-foreground">{t.gifts.lotsLabel}</p>
+                      <p className="text-lg font-bold">{tier.lots}</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <p className="mt-8 text-xs leading-relaxed text-muted-foreground">{t.gifts.footnote}</p>
+        </div>
+      </section>
+
+      {/* Rules */}
+      <section className="mx-auto max-w-6xl px-5 py-20">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr]">
+          <div>
+            <p className="section-index">
+              <span className="h-px w-8 bg-primary" />
+              {t.rules.index}
+            </p>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              {t.rules.title}
+            </h2>
+            <p className="mt-4 max-w-xs text-xs leading-relaxed text-muted-foreground">
+              {t.rules.aside}
+            </p>
+            <a
+              href="#terms"
+              className="mt-4 inline-flex items-center gap-1 text-xs font-semibold underline decoration-primary decoration-2 underline-offset-4"
+            >
+              {lang === "zh" ? "阅读完整活动条款" : "Read the full terms"}
+              <ArrowRight className="size-3.5" />
+            </a>
+          </div>
+
+          <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+            {t.rules.items.map((item) => (
+              <div key={item.no}>
+                <p className="text-[11px] font-bold tracking-[0.2em] text-muted-foreground">
+                  {item.no}
+                </p>
+                <h3 className="mt-2 text-base font-bold">{item.q}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Terms */}
+      <section id="terms" className="bg-surface py-20">
+        <div className="mx-auto max-w-6xl px-5">
+          <p className="section-index">
+            <span className="h-px w-8 bg-primary" />
+            {t.terms.index}
+          </p>
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+            {t.terms.title}
+          </h2>
+          <p className="mt-3 max-w-3xl text-sm text-muted-foreground">{t.terms.lead}</p>
+
+          <Accordion type="single" collapsible className="mt-8 rounded-xl border border-border bg-background px-5">
+            {termsSections[lang].map((section) => (
+              <AccordionItem key={section.no} value={section.no}>
+                <AccordionTrigger className="text-left text-sm font-semibold">
+                  <span className="flex items-center gap-4">
+                    <span className="text-[11px] font-bold tracking-[0.15em] text-muted-foreground">
+                      {section.no}
+                    </span>
+                    {section.title}
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="space-y-3 pl-0 sm:pl-10">
+                    {section.body.map((para) => (
+                      <p key={para.slice(0, 24)} className="text-xs leading-relaxed text-muted-foreground">
+                        {para}
+                      </p>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+
+          <p className="mt-6 text-xs text-muted-foreground">{t.terms.priority}</p>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section className="bg-primary text-primary-foreground">
+        <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-12 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-xs opacity-70">{t.contact.lead}</p>
+            <h2 className="mt-2 text-2xl font-extrabold tracking-tight">{t.contact.title}</h2>
+          </div>
+          <div className="flex flex-col gap-3 md:items-end">
+            <a href={`mailto:${t.contact.email}`} className="text-lg font-bold underline underline-offset-4">
+              {t.contact.email}
+            </a>
+            <p className="text-xs opacity-70">{t.contact.hours}</p>
+            <a
+              href={`mailto:${t.contact.email}`}
+              className="inline-flex w-fit items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-xs font-bold text-ink-foreground"
+            >
+              {t.contact.cta}
+              <ArrowUpRight className="size-3.5" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-ink py-12 text-ink-muted">
+        <div className="mx-auto max-w-6xl px-5">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <Logo />
+            <p className="text-xs">{t.footer.rights}</p>
+          </div>
+          <p className="mt-6 max-w-4xl text-[11px] leading-relaxed opacity-70">{t.footer.legal}</p>
+        </div>
+      </footer>
     </div>
   );
 }
