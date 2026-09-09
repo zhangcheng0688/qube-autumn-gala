@@ -14,7 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      promo_registrations: {
+        Row: {
+          account_number: string
+          address: string | null
+          country: string | null
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          lang: string
+          note: string | null
+          phone: string | null
+          tier: number | null
+        }
+        Insert: {
+          account_number: string
+          address?: string | null
+          country?: string | null
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          lang?: string
+          note?: string | null
+          phone?: string | null
+          tier?: number | null
+        }
+        Update: {
+          account_number?: string
+          address?: string | null
+          country?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          lang?: string
+          note?: string | null
+          phone?: string | null
+          tier?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
