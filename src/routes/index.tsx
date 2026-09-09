@@ -39,8 +39,8 @@ const jsonLd = {
       name: "Qube × Apple 金秋臻耀礼遇 (Autumn Gala Rewards)",
       description:
         "活动期内净入金与有效交易手数双重达标，即可申请对应档位 Apple 新品好礼，共六个档位。",
-      startDate: "2026-09-15T00:00:00+03:00",
-      endDate: "2026-10-14T23:59:00+03:00",
+      startDate: "2026-09-10T00:00:00+03:00",
+      endDate: "2026-10-09T23:59:00+03:00",
       eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
       eventStatus: "https://schema.org/EventScheduled",
       location: { "@type": "VirtualLocation", url: SITE },
@@ -54,7 +54,7 @@ const jsonLd = {
           name: "活动时间是什么时候？",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "活动期为 2026 年 9 月 15 日至 10 月 14 日，以 MT4/MT5 服务器时间（GMT+3）00:00 至 23:59 计算。",
+            text: "活动期为 2026 年 9 月 10 日至 10 月 9 日，以 MT4/MT5 服务器时间（GMT+3）00:00 至 23:59 计算。",
           },
         },
         {
@@ -62,7 +62,7 @@ const jsonLd = {
           name: "如何报名参加？",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "可在本页在线登记表单提交报名，或使用开户预留邮箱发送“活动名称 + 姓名 + 交易账号”至 support@qubemarkets.com，也可联系所属客户经理协助登记。报名须在 2026 年 10 月 14 日 23:59 前完成。",
+            text: "可在本页在线登记表单提交报名，或使用开户预留邮箱发送“活动名称 + 姓名 + 交易账号”至 support@qubemarkets.com，也可联系所属客户经理协助登记。报名须在 2026 年 10 月 9 日 23:59 前完成。",
           },
         },
         {
@@ -93,7 +93,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "2026.09.15–10.14 Qube × Apple 金秋臻耀礼遇：净入金与有效交易手数双重达标，即可申请六档 Apple 新品好礼，含 iPhone 18 Pro Max、Apple Watch Ultra 4 等。",
+          "2026.09.10–10.09 Qube × Apple 金秋臻耀礼遇：净入金与有效交易手数双重达标，即可申请六档 Apple 新品好礼，含 iPhone 18 Pro Max、Apple Watch Ultra 4 等。",
       },
       {
         name: "keywords",
@@ -104,7 +104,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Meet the Net Deposit and trading volume targets between 15 Sep and 14 Oct 2026 to claim an Apple reward across six tiers.",
+          "Meet the Net Deposit and trading volume targets between 10 Sep and 9 Oct 2026 to claim an Apple reward across six tiers.",
       },
       { property: "og:locale", content: "zh_CN" },
       { property: "og:locale:alternate", content: "en_US" },
@@ -237,7 +237,7 @@ function Promo() {
                 </span>
                 <h3 className="text-xl font-bold">{t.join.cards[0].title}</h3>
               </div>
-              <Mail className="size-5 text-muted-foreground" />
+              <Mail className="size-5 text-primary" />
             </div>
             <p className="mt-5 text-sm text-muted-foreground">{t.join.cards[0].body}</p>
             <a
@@ -251,7 +251,7 @@ function Promo() {
               {t.join.cards[0].field}
             </p>
             <p className="mt-5 flex items-center gap-2 text-xs text-muted-foreground">
-              <Check className="size-4 text-foreground" />
+              <Check className="size-4 text-primary" />
               {t.join.cards[0].foot}
             </p>
           </div>
@@ -264,7 +264,7 @@ function Promo() {
                 </span>
                 <h3 className="text-xl font-bold">{t.join.cards[1].title}</h3>
               </div>
-              <UserRound className="size-5 text-muted-foreground" />
+              <UserRound className="size-5 text-primary" />
             </div>
             <ol className="mt-6 space-y-5">
               {t.join.cards[1].steps.map((step, i) => (
@@ -342,7 +342,9 @@ function Promo() {
             ))}
           </div>
 
-          <p className="mt-8 text-xs leading-relaxed text-muted-foreground">{t.gifts.footnote}</p>
+          <p className="mx-auto mt-8 max-w-5xl text-center text-xs leading-relaxed text-muted-foreground">
+            {t.gifts.footnote}
+          </p>
         </div>
       </section>
 
@@ -377,9 +379,9 @@ function Promo() {
             </Button>
           </div>
 
-          <div className="mt-8 grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid border-l border-t border-border md:grid-cols-2">
             {t.rules.items.map((item) => (
-              <article key={item.no} className="border-b border-r border-border p-6 lg:min-h-72">
+              <article key={item.no} className="border-b border-r border-border p-6 sm:p-7">
                 <p className="grid size-9 place-items-center rounded-full bg-primary text-xs font-extrabold text-primary-foreground">
                   {item.no}
                 </p>

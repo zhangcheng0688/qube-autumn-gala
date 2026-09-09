@@ -5,7 +5,7 @@
 ## 活动概览 / Overview
 - 主办方 / Operator: QUBE Markets (qubemarkets.com)
 - 活动名称 / Promotion: Qube × Apple 金秋臻耀礼遇 — Autumn Gala Rewards
-- 活动期间 / Period: 2026-09-15 to 2026-10-14 (MT4/MT5 server time, GMT+3, 00:00–23:59)
+- 活动期间 / Period: 2026-09-10 to 2026-10-09 (MT4/MT5 server time, GMT+3, 00:00–23:59)
 - 报名截止 / Registration deadline: 2026-10-14 23:59 server time. Clients who do not register are not eligible even if targets are met.
 - 参与方式 / How to join: register on this page's online form, email support@qubemarkets.com with "promotion name + full name + trading account", or ask your account manager.
 
