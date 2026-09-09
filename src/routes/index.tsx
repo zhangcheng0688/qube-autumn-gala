@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, ArrowUpRight, Check, Download, Mail, UserRound } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Download, HelpCircle, Mail, UserRound } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -16,7 +16,7 @@ import gift3 from "@/assets/gift-3-new.jpg";
 import gift4 from "@/assets/gift-4-new.jpg";
 import gift5 from "@/assets/gift-5-new.jpg";
 import gift6 from "@/assets/gift-6-new.jpg";
-import qubeLogo from "@/assets/qube-markets-logo.svg";
+import qubeLogo from "@/assets/qube-logo.png.asset.json";
 import { Button } from "@/components/ui/button";
 
 const giftImages = [gift1, gift2, gift3, gift4, gift5, gift6];
@@ -118,9 +118,9 @@ export const Route = createFileRoute("/")({
 });
 
 
-function Logo() {
+function Logo({ className = "h-8 w-auto" }: { className?: string }) {
   return (
-    <img src={qubeLogo} alt="QUBE Markets" width={142} height={38} className="h-9 w-auto" />
+    <img src={qubeLogo.url} alt="QUBE Markets" width={793} height={197} className={className} />
   );
 }
 
@@ -296,8 +296,12 @@ function Promo() {
           <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
             {t.gifts.title}
           </h2>
-          <p className="mt-4 max-w-3xl text-xs leading-relaxed text-muted-foreground">
-            {t.gifts.note}
+          <p className="mt-5 flex max-w-5xl gap-2 text-xs leading-relaxed text-muted-foreground">
+            <HelpCircle className="mt-0.5 size-3.5 shrink-0" />
+            <span>
+              <span className="font-bold text-foreground">{t.gifts.noteTitle}</span>{" "}
+              {t.gifts.note}
+            </span>
           </p>
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -310,9 +314,7 @@ function Promo() {
                   <span className="rounded bg-primary px-2 py-1 text-[11px] font-bold text-primary-foreground">
                     {t.gifts.tierLabel} 0{tier.id}
                   </span>
-                  <span className="text-[11px] text-muted-foreground">
-                    {t.gifts.valueLabel} ${tier.value}
-                  </span>
+                  <span className="text-[11px] text-muted-foreground">{t.gifts.taglines[i]}</span>
                 </div>
                 <div className="mt-2 aspect-[4/2.45] overflow-hidden px-5">
                   <img
@@ -324,6 +326,9 @@ function Promo() {
                     className="h-full w-full object-cover"
                   />
                 </div>
+                <p className="px-5 pb-4 pt-1 text-[10px] text-muted-foreground">
+                  {t.gifts.imageNotes[i]}
+                </p>
                 <div className="border-t border-border px-5 py-5">
                   <h3 className="text-lg font-bold">{t.gifts.names[i]}</h3>
                   <p className="mt-1 text-xs text-muted-foreground">{t.gifts.subs[i]}</p>
@@ -334,15 +339,18 @@ function Promo() {
                     </div>
                     <div className="text-right">
                       <p className="text-[11px] text-muted-foreground">{t.gifts.lotsLabel}</p>
-                      <p className="text-lg font-bold">{tier.lots}</p>
+                      <p className="text-lg font-bold">
+                        {tier.lots} {t.gifts.lotsUnit}
+                      </p>
                     </div>
                   </div>
+                </div>
                 </div>
               </article>
             ))}
           </div>
 
-          <p className="mx-auto mt-8 max-w-5xl text-center text-xs leading-relaxed text-muted-foreground">
+          <p className="mt-8 max-w-5xl text-xs leading-relaxed text-muted-foreground">
             {t.gifts.footnote}
           </p>
         </div>
@@ -353,40 +361,36 @@ function Promo() {
         <div className="mx-auto max-w-6xl px-5">
           <div className="flex flex-col gap-6 border-b border-border pb-9 sm:flex-row sm:items-end sm:justify-between">
             <div>
-            <p className="section-index">
-              <span className="h-px w-8 bg-primary" />
-              {t.rules.index}
-            </p>
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
-              {t.rules.title}
-            </h2>
-            <p className="mt-4 max-w-xl text-xs leading-relaxed text-muted-foreground">
-              {t.rules.aside}
-            </p>
-          </div>
-            <Button asChild className="h-11 shrink-0 rounded-full px-5 font-bold">
+              <p className="section-index">
+                <span className="h-px w-8 bg-primary" />
+                {t.rules.index}
+              </p>
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+                {t.rules.title}
+              </h2>
+            </div>
+            <div className="max-w-sm sm:text-right">
+              <p className="text-xs leading-relaxed text-muted-foreground">{t.rules.aside}</p>
               <a
-                href={
-                  lang === "zh"
-                    ? "/downloads/qube-apple-autumn-gala-terms-zh.pdf"
-                    : "/downloads/qube-apple-autumn-gala-terms-en.pdf"
-                }
-                download
+                href="#terms"
+                className="mt-3 inline-flex items-center gap-1 text-xs font-bold underline decoration-primary decoration-2 underline-offset-4"
               >
-                <Download className="size-4" />
-                {lang === "zh" ? "下载完整活动条款" : "Download full terms"}
+                {t.rules.link}
+                <ArrowRight className="size-3.5" />
               </a>
-            </Button>
+            </div>
           </div>
 
-          <div className="mt-8 grid border-l border-t border-border md:grid-cols-2">
+          <div className="mt-2 grid md:grid-cols-2 md:gap-x-12">
             {t.rules.items.map((item) => (
-              <article key={item.no} className="border-b border-r border-border p-6 sm:p-7">
-                <p className="grid size-9 place-items-center rounded-full bg-primary text-xs font-extrabold text-primary-foreground">
-                  {item.no}
-                </p>
-                <h3 className="mt-6 text-base font-bold">{item.q}</h3>
-                <p className="mt-3 text-xs leading-relaxed text-muted-foreground">{item.a}</p>
+              <article key={item.no} className="border-b border-border py-7">
+                <h3 className="flex items-center gap-3 text-base font-bold">
+                  <span className="grid size-6 shrink-0 place-items-center rounded bg-primary/25 text-[11px] font-extrabold text-foreground">
+                    {item.no}
+                  </span>
+                  {item.q}
+                </h3>
+                <p className="mt-3 pl-9 text-xs leading-relaxed text-muted-foreground">{item.a}</p>
               </article>
             ))}
           </div>
@@ -396,13 +400,29 @@ function Promo() {
       {/* Terms */}
       <section id="terms" className="bg-surface py-20">
         <div className="mx-auto max-w-6xl px-5">
-          <p className="section-index">
-            <span className="h-px w-8 bg-primary" />
-            {t.terms.index}
-          </p>
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
-            {t.terms.title}
-          </h2>
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="section-index">
+                <span className="h-px w-8 bg-primary" />
+                {t.terms.index}
+              </p>
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+                {t.terms.title}
+              </h2>
+            </div>
+            <a
+              href={
+                lang === "zh"
+                  ? "/downloads/qube-apple-autumn-gala-terms-zh.pdf"
+                  : "/downloads/qube-apple-autumn-gala-terms-en.pdf"
+              }
+              download
+              className="inline-flex w-fit items-center gap-2 text-xs font-bold underline decoration-primary decoration-2 underline-offset-4"
+            >
+              {t.terms.download}
+              <Download className="size-3.5" />
+            </a>
+          </div>
           <p className="mt-3 max-w-3xl text-sm text-muted-foreground">{t.terms.lead}</p>
 
           <Accordion type="single" collapsible className="mt-8 rounded-xl border border-border bg-background px-5">
@@ -410,7 +430,7 @@ function Promo() {
               <AccordionItem key={section.no} value={section.no}>
                 <AccordionTrigger className="text-left text-sm font-semibold">
                   <span className="flex items-center gap-4">
-                    <span className="text-[11px] font-bold tracking-[0.15em] text-muted-foreground">
+                    <span className="grid size-6 shrink-0 place-items-center rounded bg-primary/25 text-[11px] font-extrabold text-foreground">
                       {section.no}
                     </span>
                     {section.title}
@@ -435,19 +455,23 @@ function Promo() {
 
       {/* Contact */}
       <section className="bg-primary text-primary-foreground">
-        <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-12 md:flex-row md:items-center md:justify-between">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-14 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="text-xs opacity-70">{t.contact.lead}</p>
-            <h2 className="mt-2 text-2xl font-extrabold tracking-tight">{t.contact.title}</h2>
+            <p className="text-xs opacity-75">{t.contact.lead}</p>
+            <h2 className="mt-2 text-2xl font-extrabold tracking-tight sm:text-3xl">
+              {t.contact.title}
+            </h2>
           </div>
-          <div className="flex flex-col gap-3 md:items-end">
-            <a href={emailHref} className="text-lg font-bold underline underline-offset-4">
-              {t.contact.email}
-            </a>
-            <p className="text-xs opacity-70">{t.contact.hours}</p>
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-10">
+            <div>
+              <a href={emailHref} className="text-lg font-bold">
+                {t.contact.email}
+              </a>
+              <p className="mt-1 text-xs opacity-75">{t.contact.hours}</p>
+            </div>
             <a
               href={emailHref}
-              className="inline-flex w-fit items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-xs font-bold text-ink-foreground"
+              className="inline-flex w-fit items-center gap-2 rounded-full bg-background px-7 py-3.5 text-xs font-bold text-foreground shadow-sm"
             >
               {t.contact.cta}
               <ArrowUpRight className="size-3.5" />
@@ -459,10 +483,13 @@ function Promo() {
       <footer className="bg-ink py-12 text-ink-muted">
         <div className="mx-auto max-w-6xl px-5">
           <div className="flex flex-wrap items-center justify-between gap-4">
-            <Logo />
+            <Logo className="h-7 w-auto" />
             <p className="text-xs">{t.footer.rights}</p>
           </div>
-          <p className="mt-6 max-w-4xl text-[11px] leading-relaxed opacity-70">{t.footer.legal}</p>
+          <div className="mt-8 space-y-2 border-t border-white/10 pt-6">
+            <p className="max-w-5xl text-[11px] leading-relaxed opacity-70">{t.footer.legal}</p>
+            <p className="max-w-5xl text-[11px] leading-relaxed opacity-70">{t.footer.legal2}</p>
+          </div>
         </div>
       </footer>
     </div>
