@@ -356,7 +356,14 @@ function Promo() {
             </p>
           </div>
             <Button asChild className="h-11 shrink-0 rounded-full px-5 font-bold">
-              <a href="/downloads/qube-apple-autumn-gala-terms.pdf" download>
+              <a
+                href={
+                  lang === "zh"
+                    ? "/downloads/qube-apple-autumn-gala-terms-zh.pdf"
+                    : "/downloads/qube-apple-autumn-gala-terms-en.pdf"
+                }
+                download
+              >
                 <Download className="size-4" />
                 {lang === "zh" ? "下载完整活动条款" : "Download full terms"}
               </a>
