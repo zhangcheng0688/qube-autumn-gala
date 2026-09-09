@@ -39,8 +39,8 @@ const jsonLd = {
       name: "Qube × Apple 金秋臻耀礼遇 (Autumn Gala Rewards)",
       description:
         "活动期内净入金与有效交易手数双重达标，即可申请对应档位 Apple 新品好礼，共六个档位。",
-      startDate: "2026-09-10T00:00:00+03:00",
-      endDate: "2026-10-09T23:59:00+03:00",
+      startDate: "2026-09-15T00:00:00+03:00",
+      endDate: "2026-10-14T23:59:00+03:00",
       eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
       eventStatus: "https://schema.org/EventScheduled",
       location: { "@type": "VirtualLocation", url: SITE },
@@ -54,7 +54,7 @@ const jsonLd = {
           name: "活动时间是什么时候？",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "活动期为 2026 年 9 月 10 日至 10 月 9 日，以 MT4/MT5 服务器时间（GMT+3）00:00 至 23:59 计算。",
+            text: "活动期为 2026 年 9 月 15 日至 10 月 14 日，以 MT4/MT5 服务器时间（GMT+3）00:00 至 23:59 计算。",
           },
         },
         {
@@ -62,7 +62,7 @@ const jsonLd = {
           name: "如何报名参加？",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "可在本页在线登记表单提交报名，或使用开户预留邮箱发送“活动名称 + 姓名 + 交易账号”至 support@qubemarkets.com，也可联系所属客户经理协助登记。报名须在 2026 年 10 月 9 日 23:59 前完成。",
+            text: "可在本页在线登记表单提交报名，或使用开户预留邮箱发送“活动名称 + 姓名 + 交易账号”至 support@qubemarkets.com，也可联系所属客户经理协助登记。报名须在 2026 年 10 月 14 日 23:59 前完成。",
           },
         },
         {
@@ -93,7 +93,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "2026.09.10–10.09 Qube × Apple 金秋臻耀礼遇：净入金与有效交易手数双重达标，即可申请六档 Apple 新品好礼，含 iPhone 18 Pro Max、Apple Watch Ultra 4 等。",
+          "2026.09.15–10.14 Qube × Apple 金秋臻耀礼遇：净入金与有效交易手数双重达标，即可申请六档 Apple 新品好礼，含 iPhone 18 Pro Max、Apple Watch Ultra 4 等。",
       },
       {
         name: "keywords",
@@ -104,7 +104,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Meet the Net Deposit and trading volume targets between 10 Sep and 9 Oct 2026 to claim an Apple reward across six tiers.",
+          "Meet the Net Deposit and trading volume targets between 15 Sep and 14 Oct 2026 to claim an Apple reward across six tiers.",
       },
       { property: "og:locale", content: "zh_CN" },
       { property: "og:locale:alternate", content: "en_US" },
