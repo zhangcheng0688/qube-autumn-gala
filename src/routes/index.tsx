@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import { content, termsSections, tiers, type Lang } from "@/content/promo";
 import { RegistrationForm } from "@/components/RegistrationForm";
-import heroDevices from "@/assets/hero-devices.jpg";
+import heroDevices from "@/assets/hero-devices-final.jpg";
 import gift1 from "@/assets/gift-1-new.jpg";
 import gift2 from "@/assets/gift-2-new.jpg";
 import gift3 from "@/assets/gift-3-new.jpg";
@@ -127,6 +127,12 @@ function Logo() {
 function Promo() {
   const [lang, setLang] = useState<Lang>("zh");
   const t = content[lang];
+  const emailHref = `mailto:${t.contact.email}?subject=${encodeURIComponent(
+    lang === "zh" ? "Qube × Apple 金秋臻耀礼遇活动咨询" : "Qube × Apple Autumn Rewards enquiry",
+  )}`;
+  const registrationEmailHref = `mailto:${t.join.cards[0].email}?subject=${encodeURIComponent(
+    t.join.cards[0].field,
+  )}`;
 
   return (
     <div className="min-h-screen bg-background font-sans">
@@ -142,15 +148,16 @@ function Promo() {
             ))}
           </div>
           <div className="flex items-center gap-2">
-            <button
+            <Button
               type="button"
+              variant="outline"
               onClick={() => setLang(lang === "zh" ? "en" : "zh")}
-              className="rounded-full border border-ink-border px-3 py-2 text-xs font-semibold text-ink-foreground transition-colors hover:border-primary hover:text-primary"
+              className="h-9 rounded-full border-ink-border bg-transparent px-3 text-xs text-ink-foreground hover:border-primary hover:bg-transparent hover:text-primary"
             >
               {t.langLabel}
-            </button>
+            </Button>
             <a
-              href="mailto:support@qubemarkets.com"
+              href={emailHref}
               className="hidden items-center gap-2 rounded-full border border-ink-border px-4 py-2 text-xs font-semibold text-ink-foreground transition-colors hover:border-primary hover:text-primary sm:inline-flex"
             >
               {t.navCta}
@@ -234,7 +241,7 @@ function Promo() {
             </div>
             <p className="mt-5 text-sm text-muted-foreground">{t.join.cards[0].body}</p>
             <a
-              href={`mailto:${t.join.cards[0].email}`}
+              href={registrationEmailHref}
               className="mt-1 inline-block text-lg font-bold underline decoration-primary decoration-2 underline-offset-4"
             >
               {t.join.cards[0].email}
@@ -432,12 +439,12 @@ function Promo() {
             <h2 className="mt-2 text-2xl font-extrabold tracking-tight">{t.contact.title}</h2>
           </div>
           <div className="flex flex-col gap-3 md:items-end">
-            <a href={`mailto:${t.contact.email}`} className="text-lg font-bold underline underline-offset-4">
+            <a href={emailHref} className="text-lg font-bold underline underline-offset-4">
               {t.contact.email}
             </a>
             <p className="text-xs opacity-70">{t.contact.hours}</p>
             <a
-              href={`mailto:${t.contact.email}`}
+              href={emailHref}
               className="inline-flex w-fit items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-xs font-bold text-ink-foreground"
             >
               {t.contact.cta}
