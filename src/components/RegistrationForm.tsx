@@ -51,7 +51,7 @@ const copy = {
 const field =
   "mt-1.5 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none transition-colors focus:border-primary";
 
-export function RegistrationForm({ lang, tierNames }: { lang: Lang; tierNames: string[] }) {
+export function RegistrationForm({ lang, tierNames }: { lang: Lang; tierNames: readonly string[] }) {
   const c = copy[lang];
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
   const [error, setError] = useState<string | null>(null);
