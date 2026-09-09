@@ -142,7 +142,9 @@ export function RegistrationForm({ lang }: { lang: Lang }) {
           onChange={(e) => setAgree(e.target.checked)}
           className="mt-0.5 size-4 accent-[oklch(0.85_0.2_125)]"
         />
-        <span>{c.agree}</span>
+        <a href="#terms" className="underline decoration-primary underline-offset-2 hover:text-foreground">
+          {c.agree}
+        </a>
       </label>
 
       {error && <p className="mt-4 text-xs font-semibold text-destructive">{error}</p>}

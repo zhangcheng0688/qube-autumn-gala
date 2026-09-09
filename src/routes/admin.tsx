@@ -3,6 +3,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import { Download, Loader2, LockKeyhole, LogOut, RefreshCw } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   adminLogin,
   adminLogout,
@@ -30,9 +31,6 @@ function toCsv(rows: Registration[]) {
     "email",
     "phone",
     "account_number",
-    "tier",
-    "country",
-    "address",
     "note",
     "lang",
   ] as const;
@@ -115,14 +113,14 @@ function Admin() {
             className="mt-6 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:border-primary"
           />
           {error && <p className="mt-2 text-sm text-destructive">密码错误，请重试。</p>}
-          <button
+          <Button
             type="submit"
             disabled={busy || !password}
-            className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground disabled:opacity-60"
+            className="mt-4 w-full rounded-lg"
           >
             {busy && <Loader2 className="size-4 animate-spin" />}
             进入后台
-          </button>
+          </Button>
         </form>
       </div>
     );
@@ -140,31 +138,36 @@ function Admin() {
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
-          <button
+          <Button
+            type="button"
+            variant="outline"
             onClick={() => rows.refetch()}
-            className="inline-flex items-center gap-2 rounded-lg border border-input px-3 py-2 text-sm font-medium"
+            className="rounded-lg"
           >
             <RefreshCw className={`size-4 ${rows.isFetching ? "animate-spin" : ""}`} />
             刷新
-          </button>
-          <button
+          </Button>
+          <Button
+            type="button"
             onClick={download}
             disabled={!data.length}
-            className="inline-flex items-center gap-2 rounded-lg bg-primary px-3 py-2 text-sm font-semibold text-primary-foreground disabled:opacity-50"
+            className="rounded-lg"
           >
             <Download className="size-4" />
             导出 CSV
-          </button>
-          <button
+          </Button>
+          <Button
+            type="button"
+            variant="outline"
             onClick={async () => {
               await logout({});
               await queryClient.invalidateQueries();
             }}
-            className="inline-flex items-center gap-2 rounded-lg border border-input px-3 py-2 text-sm font-medium"
+            className="rounded-lg"
           >
             <LogOut className="size-4" />
             退出
-          </button>
+          </Button>
         </div>
       </header>
 
@@ -177,10 +180,10 @@ function Admin() {
           <p className="py-20 text-center text-sm text-muted-foreground">暂无报名数据。</p>
         ) : (
           <div className="overflow-x-auto rounded-xl border border-border">
-            <table className="w-full min-w-[1000px] text-left text-sm">
+            <table className="w-full min-w-[760px] text-left text-sm">
               <thead className="bg-muted/60 text-xs uppercase text-muted-foreground">
                 <tr>
-                  {["提交时间", "姓名", "邮箱", "电话", "交易账号", "档位", "国家/地区", "收件地址", "备注", "语言"].map(
+                  {["提交时间", "姓名", "邮箱", "电话", "交易账号", "备注", "语言"].map(
                     (h) => (
                       <th key={h} className="whitespace-nowrap px-3 py-3 font-semibold">
                         {h}
@@ -199,9 +202,6 @@ function Admin() {
                     <td className="px-3 py-3">{r.email}</td>
                     <td className="whitespace-nowrap px-3 py-3">{r.phone}</td>
                     <td className="whitespace-nowrap px-3 py-3">{r.account_number}</td>
-                    <td className="px-3 py-3">{r.tier ? `T${r.tier}` : "-"}</td>
-                    <td className="px-3 py-3">{r.country}</td>
-                    <td className="max-w-[260px] px-3 py-3">{r.address}</td>
                     <td className="max-w-[200px] px-3 py-3 text-muted-foreground">{r.note}</td>
                     <td className="px-3 py-3 uppercase">{r.lang}</td>
                   </tr>
