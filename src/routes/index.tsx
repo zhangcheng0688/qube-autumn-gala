@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, ArrowUpRight, Check, Mail, UserRound } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Download, Mail, UserRound } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -10,12 +10,14 @@ import {
 import { content, termsSections, tiers, type Lang } from "@/content/promo";
 import { RegistrationForm } from "@/components/RegistrationForm";
 import heroDevices from "@/assets/hero-devices.jpg";
-import gift1 from "@/assets/gift-1.jpg";
-import gift2 from "@/assets/gift-2.jpg";
-import gift3 from "@/assets/gift-3.jpg";
-import gift4 from "@/assets/gift-4.jpg";
-import gift5 from "@/assets/gift-5.jpg";
-import gift6 from "@/assets/gift-6.jpg";
+import gift1 from "@/assets/gift-1-new.jpg";
+import gift2 from "@/assets/gift-2-new.jpg";
+import gift3 from "@/assets/gift-3-new.jpg";
+import gift4 from "@/assets/gift-4-new.jpg";
+import gift5 from "@/assets/gift-5-new.jpg";
+import gift6 from "@/assets/gift-6-new.jpg";
+import qubeLogo from "@/assets/qube-markets-logo.svg";
+import { Button } from "@/components/ui/button";
 
 const giftImages = [gift1, gift2, gift3, gift4, gift5, gift6];
 
@@ -116,18 +118,9 @@ export const Route = createFileRoute("/")({
 });
 
 
-function Logo({ tone = "light" }: { tone?: "light" | "dark" }) {
+function Logo() {
   return (
-    <span
-      className={`inline-flex items-center gap-2 text-lg font-extrabold tracking-tight ${
-        tone === "light" ? "text-ink-foreground" : "text-ink"
-      }`}
-    >
-      <span className="grid size-6 place-items-center rounded-sm bg-primary text-primary-foreground text-[13px] font-black">
-        Q
-      </span>
-      QUBE
-    </span>
+    <img src={qubeLogo} alt="QUBE Markets" width={142} height={38} className="h-9 w-auto" />
   );
 }
 
@@ -280,7 +273,7 @@ function Promo() {
         </div>
 
         <div className="mt-6">
-          <RegistrationForm lang={lang} tierNames={t.gifts.names} />
+          <RegistrationForm lang={lang} />
         </div>
 
         <p className="mt-8 text-xs leading-relaxed text-muted-foreground">{t.join.deadline}</p>
@@ -304,7 +297,7 @@ function Promo() {
             {tiers.map((tier, i) => (
               <article
                 key={tier.id}
-                className="flex flex-col overflow-hidden rounded-xl border border-border bg-background transition-shadow hover:shadow-[0_18px_40px_-24px_oklch(0.2_0.02_260/0.5)]"
+                className="flex flex-col overflow-hidden rounded-xl border border-border bg-background transition-shadow hover:shadow-lg"
               >
                 <div className="flex items-center justify-between px-5 pt-5">
                   <span className="rounded bg-primary px-2 py-1 text-[11px] font-bold text-primary-foreground">
@@ -314,14 +307,16 @@ function Promo() {
                     {t.gifts.valueLabel} ${tier.value}
                   </span>
                 </div>
-                <img
-                  src={giftImages[i]}
-                  alt={t.gifts.names[i]}
-                  width={800}
-                  height={640}
-                  loading="lazy"
-                  className="mx-auto h-44 w-auto object-contain py-4"
-                />
+                <div className="mt-2 aspect-[4/2.45] overflow-hidden px-5">
+                  <img
+                    src={giftImages[i]}
+                    alt={t.gifts.names[i]}
+                    width={1024}
+                    height={768}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
                 <div className="border-t border-border px-5 py-5">
                   <h3 className="text-lg font-bold">{t.gifts.names[i]}</h3>
                   <p className="mt-1 text-xs text-muted-foreground">{t.gifts.subs[i]}</p>
@@ -345,9 +340,10 @@ function Promo() {
       </section>
 
       {/* Rules */}
-      <section className="mx-auto max-w-6xl px-5 py-20">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr]">
-          <div>
+      <section className="bg-background py-20">
+        <div className="mx-auto max-w-6xl px-5">
+          <div className="flex flex-col gap-6 border-b border-border pb-9 sm:flex-row sm:items-end sm:justify-between">
+            <div>
             <p className="section-index">
               <span className="h-px w-8 bg-primary" />
               {t.rules.index}
@@ -355,27 +351,27 @@ function Promo() {
             <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
               {t.rules.title}
             </h2>
-            <p className="mt-4 max-w-xs text-xs leading-relaxed text-muted-foreground">
+            <p className="mt-4 max-w-xl text-xs leading-relaxed text-muted-foreground">
               {t.rules.aside}
             </p>
-            <a
-              href="#terms"
-              className="mt-4 inline-flex items-center gap-1 text-xs font-semibold underline decoration-primary decoration-2 underline-offset-4"
-            >
-              {lang === "zh" ? "阅读完整活动条款" : "Read the full terms"}
-              <ArrowRight className="size-3.5" />
-            </a>
+          </div>
+            <Button asChild className="h-11 shrink-0 rounded-full px-5 font-bold">
+              <a href="/downloads/qube-apple-autumn-gala-terms.pdf" download>
+                <Download className="size-4" />
+                {lang === "zh" ? "下载完整活动条款" : "Download full terms"}
+              </a>
+            </Button>
           </div>
 
-          <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+          <div className="mt-8 grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-4">
             {t.rules.items.map((item) => (
-              <div key={item.no}>
-                <p className="text-[11px] font-bold tracking-[0.2em] text-muted-foreground">
+              <article key={item.no} className="border-b border-r border-border p-6 lg:min-h-72">
+                <p className="grid size-9 place-items-center rounded-full bg-primary text-xs font-extrabold text-primary-foreground">
                   {item.no}
                 </p>
-                <h3 className="mt-2 text-base font-bold">{item.q}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{item.a}</p>
-              </div>
+                <h3 className="mt-6 text-base font-bold">{item.q}</h3>
+                <p className="mt-3 text-xs leading-relaxed text-muted-foreground">{item.a}</p>
+              </article>
             ))}
           </div>
         </div>
