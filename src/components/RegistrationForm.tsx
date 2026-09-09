@@ -135,24 +135,24 @@ export function RegistrationForm({ lang }: { lang: Lang }) {
         </label>
       </div>
 
-      <label className="mt-5 flex items-start gap-3 text-xs text-muted-foreground">
+      <label className="mx-auto mt-5 flex w-fit max-w-full items-start justify-center gap-3 text-xs text-muted-foreground">
         <input
           type="checkbox"
           checked={agree}
           onChange={(e) => setAgree(e.target.checked)}
-          className="mt-0.5 size-4 accent-[oklch(0.85_0.2_125)]"
+          className="mt-0.5 size-4 accent-primary"
         />
         <a href="#terms" className="underline decoration-primary underline-offset-2 hover:text-foreground">
           {c.agree}
         </a>
       </label>
 
-      {error && <p className="mt-4 text-xs font-semibold text-destructive">{error}</p>}
+      {error && <p className="mt-4 text-center text-xs font-semibold text-destructive">{error}</p>}
 
       <Button
         type="submit"
         disabled={status === "sending"}
-        className="mt-6 h-11 rounded-full px-6 font-bold transition-transform hover:-translate-y-0.5"
+        className="mx-auto mt-6 flex h-11 rounded-full px-6 font-bold transition-transform hover:-translate-y-0.5"
       >
         {status === "sending" ? <Loader2 className="size-4 animate-spin" /> : <Send className="size-4" />}
         {status === "sending" ? c.submitting : c.submit}
