@@ -193,11 +193,28 @@ export const content = {
     gifts: {
       index: "02 / Reward tiers",
       title: "Six tiers, one clear view",
-      note: "Estimated values are projected USD overseas market prices for the relevant new Apple products, provided solely as a tier-matching reference. They are not official Apple prices. Rewards must be redeemed at the tier achieved; tiers cannot be combined or split.",
+      noteTitle: "About the rewards and images",
+      note: "Names, specifications and values for products not yet officially released are indicative, for tier and budget reference only, and are not a commitment to a specific model or configuration. The images below show existing product categories; the final rewards follow Apple's official release, pricing and availability.",
       tierLabel: "Tier",
       depositLabel: "Net deposit USD",
       lotsLabel: "Valid lots",
-      valueLabel: "Est. value",
+      lotsUnit: "lots",
+      taglines: [
+        "Everyday companion",
+        "Listen freely",
+        "Inspiration on your wrist",
+        "Explore further",
+        "A new perspective",
+        "Something extraordinary",
+      ],
+      imageNotes: [
+        "Existing product shown",
+        "Existing product shown",
+        "Existing product shown",
+        "Existing product shown",
+        "Existing product shown",
+        "iPhone category shown · non-foldable model",
+      ],
       names: [
         "Apple Official Accessories Bundle",
         "AirPods Pro 4",
@@ -208,61 +225,65 @@ export const content = {
       ],
       subs: [
         "MagSafe Charger + AirTag",
-        "2026 new model",
-        "Aluminium, GPS",
-        "Titanium",
-        "1TB · 2026 autumn model",
-        "Foldable, 256GB",
+        "2026 new model · indicative reward",
+        "Aluminium, GPS · indicative reward",
+        "Titanium · indicative reward",
+        "1TB · indicative reward",
+        "Foldable, 256GB · indicative reward",
       ],
       footnote:
-        "Each client may participate with one account only. Rewards are redeemed on a first-qualified, first-served basis while stocks last. Final eligibility is subject to Platform review. Estimated reward values are not cash-equivalent commitments.",
+        "Each client may participate with one account only. Rewards are redeemed on a first-qualified, first-served basis while stocks last. Final eligibility is subject to Platform review. Reward values are not cash-equivalent commitments.",
     },
     rules: {
       index: "03 / Key rules",
       title: "The rules, in plain terms",
       aside:
-        "A summary of the core rules. The complete Terms and Conditions are set out below.",
+        "From account eligibility to reward delivery, these conditions affect your redemption eligibility.",
+      link: "Read the full terms",
       items: [
         {
           no: "01",
           q: "Which accounts can take part?",
-          a: "The promotion is open to all clients in the Greater China region who are at least 18 years of age with full legal capacity. Standard and ECN accounts only; Cent, PAMM, MAM, Agent and all institutional accounts are excluded. Each client may use one account only.",
+          a: "The promotion is open to all clients in the Greater China region who are at least 18 years of age with full legal capacity. Standard and ECN accounts only; Cent, PAMM, MAM, Agent and all institutional accounts are excluded.",
         },
         {
           no: "02",
           q: "How is Net Deposit calculated?",
-          a: "Total cumulative deposits minus total cumulative withdrawals during the Promotion Period. Only genuine cross-border/channel deposits count; internal transfers, transfers between accounts and agent commissions are excluded.",
+          a: "Total cumulative deposits minus total cumulative withdrawals during the Promotion Period. Only genuine cross-border/channel deposits count; internal transfers, transfers between accounts and agent commissions are excluded, and multiple accounts cannot be combined.",
         },
         {
           no: "03",
           q: "Which trades count as valid lots?",
-          a: "Only closed standard-lot trades count, with partial lots aggregated. Each order must be held for at least 3 minutes. Hedging volume must not exceed 50% of total volume. Arbitrage, high-frequency sham trading, wash trading and EA/API high-frequency automated trading are excluded and may be treated as violations.",
+          a: "Only closed standard-lot trades held for at least 3 minutes count, with partial lots aggregated. Hedging, arbitrage and wash trading are restricted under the terms, and breaches may lead to disqualification.",
         },
         {
           no: "04",
           q: "Can I withdraw after qualifying?",
-          a: "Your Net Deposit must be maintained until the promotion ends and your redemption application is submitted. If a withdrawal takes your Net Deposit below the qualifying tier, the Platform may cancel or downgrade your redemption eligibility.",
+          a: "Before the reward is delivered, a withdrawal that takes your Net Deposit below the qualifying tier may cancel or downgrade your redemption eligibility. Your account must remain in normal trading status during the promotion and until the reward is delivered.",
         },
       ],
     },
     terms: {
       index: "04 / Full terms",
       title: "Terms and Conditions",
+      download: "Download full terms",
       lead: "Promotion Period: 00:00 on 15 September 2026 to 23:59 on 14 October 2026, MT5 Server Time (GMT+3). The complete terms are listed below.",
       priority:
         "The English version of these Terms and Conditions is legally binding. Any translated version is for reference only; in the event of inconsistency, the English version prevails.",
     },
     contact: {
       title: "Contact QUBE Markets support",
-      lead: "Any questions about the promotion or these terms? Get in touch.",
+      lead: "Any questions about the promotion or these terms?",
       email: "support@qubemarkets.com",
-      hours: "Live chat: Monday to Friday, 09:00–18:00 MT5 Server Time",
+      hours: "Monday to Friday · 09:00–18:00 MT5 Server Time",
       cta: "Email us",
     },
     footer: {
       rights: "© 2026 QUBE Markets. All rights reserved.",
       legal:
-        "This promotion is organized by Qube Markets Global Fintech Limited (company number 16389, licence no. L16389/QMGFL, Anjouan Offshore Finance Authority). Apple Inc. is not a sponsor, partner or administrator of, or otherwise associated with, this promotion. Apple and the relevant Apple product names are trademarks of Apple Inc. CFDs and margin FX trading carry a high level of leverage risk and may result in the loss of all capital. Do not deposit or trade solely to obtain a promotional benefit.",
+        "This promotion is organized by Qube Markets Global Fintech Limited. Apple Inc. is not a sponsor, partner or administrator of, or otherwise associated with, this promotion. Apple and the relevant Apple product names are trademarks of Apple Inc.",
+      legal2:
+        "Reward names, specifications and reference values are not a commitment to a specific product; the final rewards follow Apple's official release and availability. Organizer details, governing law and dispute resolution are set out in the Terms and Conditions.",
     },
   },
 } as const;
