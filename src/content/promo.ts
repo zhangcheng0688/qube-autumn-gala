@@ -137,7 +137,9 @@ export const content = {
     footer: {
       rights: "© 2026 QUBE Markets. All rights reserved.",
       legal:
-        "本活动由 Qube Markets Global Fintech Limited（注册编号 16389，昂儒昂离岸金融局牌照编号 L16389/QMGFL）主办。Apple Inc. 不是本次活动的赞助商、合作伙伴或管理员，也未以其他方式参与本次活动。Apple 及相关 Apple 产品名称是 Apple Inc. 的商标。差价合约（CFD）及保证金外汇交易具有高杠杆风险，可能导致损失全部本金。请勿仅为获取活动福利而进行存款或交易。",
+        "本活动由 Qube Markets Global Fintech Limited 主办。Apple Inc. 不是本次活动的赞助商、合作伙伴、管理员，也未以其他方式参与本次活动。Apple 及相关 Apple 产品名称是 Apple Inc. 的商标。",
+      legal2:
+        "礼品名称、规格及参考价值不构成具体产品承诺，最终以 Apple 正式发布及供货情况为准。主办方资料、适用法律及争议解决安排详见活动条款。",
     },
   },
   en: {
