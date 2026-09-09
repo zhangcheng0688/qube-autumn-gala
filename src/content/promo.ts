@@ -358,7 +358,7 @@ export const termsSections: Record<Lang, Section[]> = {
       title: "General provisions",
       body: [
         "Organizer: This promotion is organized by Qube Markets Global Fintech Limited, trading as QUBE MARKETS (company number 16389), incorporated under the laws of the Union of Comoros, Offshore Finance Authority, registered office Boulevard de Coalancanthe, Muthusamudu, Anjouan, Union of Comoros, licence no. L16389/QMGFL (the \u201CPlatform\u201D or \u201Cwe\u201D). Apple Inc. is not a sponsor, partner or administrator of, or otherwise associated with, this promotion.",
-        "Promotion period: 00:00 on 10 September 2026 to 23:59 on 9 October 2026, MT5 Server Time (GMT+3). Start and end times are determined by the Platform's system time; no participation or redemption applications are accepted after expiry.",
+        "Promotion period: 00:00 on 15 September 2026 to 23:59 on 14 October 2026, MT5 Server Time (GMT+3). Start and end times are determined by the Platform's system time; no participation or redemption applications are accepted after expiry.",
         "Binding effect: By participating, a client is deemed to have fully read, understood and agreed to these Terms, the Client Agreement, the Risk Disclosure Statement and all other applicable QUBE Markets rules and policies.",
         "Right to amend: QUBE Markets may amend, suspend or terminate the promotion or these rules as it considers necessary, and may adjust physical rewards and reference values in light of Apple launch, availability and price movements. Material changes are notified by website announcement, in-platform message or email; clients who have already qualified do not lose eligibility as a result. The Platform reserves the right of final interpretation.",
         "Handling of violations: Where we have reasonable evidence of false deposits, sham trading, wash trading, malicious arbitrage, market manipulation, collusion, or participation using another person's account, we may cancel eligibility, revoke redemption rights and recover rewards already issued, without prior notice.",
@@ -384,7 +384,7 @@ export const termsSections: Record<Lang, Section[]> = {
         "Availability: Due to limited initial production capacity, rewards are limited in quantity and allocated on a first-qualified, first-redeemed basis until stocks are exhausted. If a product is unavailable, the Platform may provide an alternative Apple product of equivalent value.",
         "Duplicate participation: Multiple accounts linked to the same client, identity, bank card/payment channel, IP address or device fingerprint are treated as one participant and may redeem only one reward.",
         "No cash alternative: All rewards are provided in physical form and cannot be exchanged for cash, used to offset trading margin, or converted into account credit or trading bonuses.",
-        "Value confirmation: Estimated values are based on projected prices from the Apple event of 9 September 2026; the official Apple retail price prevails. Where the actual price deviates from the estimate by more than \u00B120%, the Platform may adjust the reward model within an equivalent value range.",
+        "Value confirmation: Estimated values are based on projected prices from the Apple event of 14 September 2026; the official Apple retail price prevails. Where the actual price deviates from the estimate by more than \u00B120%, the Platform may adjust the reward model within an equivalent value range.",
       ],
     },
     {
