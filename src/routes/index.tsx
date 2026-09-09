@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { content, termsSections, tiers, type Lang } from "@/content/promo";
+import { RegistrationForm } from "@/components/RegistrationForm";
 import heroDevices from "@/assets/hero-devices.jpg";
 import gift1 from "@/assets/gift-1.jpg";
 import gift2 from "@/assets/gift-2.jpg";
@@ -199,6 +200,10 @@ function Promo() {
               ))}
             </ol>
           </div>
+        </div>
+
+        <div className="mt-6">
+          <RegistrationForm lang={lang} tierNames={t.gifts.names} />
         </div>
 
         <p className="mt-8 text-xs leading-relaxed text-muted-foreground">{t.join.deadline}</p>
