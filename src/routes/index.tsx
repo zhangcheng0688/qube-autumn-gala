@@ -345,7 +345,6 @@ function Promo() {
                     </div>
                   </div>
                 </div>
-                </div>
               </article>
             ))}
           </div>
