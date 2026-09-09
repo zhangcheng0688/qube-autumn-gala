@@ -55,13 +55,23 @@ export const content = {
         "报名须于 2026 年 10 月 14 日 23:59（MT4/MT5 服务器时间）前完成，逾期不再受理。未报名客户即使达标亦不具备兑换资格。",
     },
     gifts: {
-      index: "02 / 档位礼遇",
+      index: "02 / 臻选礼遇",
       title: "六档好礼 一目了然",
-      note: "礼品参考价值为 Apple 新品海外市场预估美元售价，仅作档位匹配参考，非官方定价，实物以 Apple 正式上市版本为准。按达标标准兑换对应礼品，不可跨档叠加、不可拆分档位。",
+      noteTitle: "关于礼品与图片",
+      note: "尚未正式发布的名称、规格及价值仅作档位和预算参考，不构成具体型号或配置承诺。以下使用现有产品类别示意图；最终礼品按 Apple 正式发布、售价及供货情况确定。",
       tierLabel: "礼遇",
-      depositLabel: "净入金 USD",
-      lotsLabel: "有效手数",
-      valueLabel: "预估价值",
+      depositLabel: "净入金",
+      lotsLabel: "有效交易",
+      lotsUnit: "手",
+      taglines: ["日常相伴", "随心聆听", "腕间灵感", "探索更多", "全新视角", "非凡期待"],
+      imageNotes: [
+        "现有产品示意",
+        "现有产品示意",
+        "现有产品示意",
+        "现有产品示意",
+        "现有产品示意",
+        "iPhone 类别示意 · 非折叠屏新品",
+      ],
       names: [
         "Apple 官方配件礼包",
         "AirPods Pro 4",
@@ -72,60 +82,64 @@ export const content = {
       ],
       subs: [
         "MagSafe 充电器 + AirTag",
-        "2026 新款",
-        "铝金属 GPS 版",
-        "钛金属",
-        "1TB · 2026 秋季新品",
-        "折叠屏 256GB",
+        "2026 新款 · 拟定礼品",
+        "铝金属 GPS 版 · 拟定礼品",
+        "钛金属 · 拟定礼品",
+        "1TB · 拟定礼品",
+        "折叠屏 256GB · 拟定礼品",
       ],
       footnote:
         "每位客户仅限一个账户参与。先达标、先兑换，兑完即止；最终资格须经平台审核。礼品参考价值不是现金等价承诺。",
     },
     rules: {
-      index: "03 / 参与规则",
+      index: "03 / 参与须知",
       title: "重要规则 了解清楚",
-      aside: "以下为核心规则摘要，完整条件与条款请见下方条款专区。",
+      aside: "从账户资格到礼品发放，这些条件会影响你的兑换资格。",
+      link: "阅读完整活动条款",
       items: [
         {
           no: "01",
           q: "哪些账户可以参与？",
-          a: "本次活动面向大中华区所有客户开放，客户须为年满 18 周岁的完全民事行为能力人。仅适用于标准账户与 ECN 账户；美分账户、PAMM 账户、MAM 账户、代理账户及各类机构账户不在参与范围内。每位客户仅限使用一个账户参加。",
+          a: "本次活动面向大中华区所有客户开放。客户须为年满 18 周岁的完全民事行为能力人。标准账户与 ECN 账户。美分账户、PAMM 账户、MAM 账户、代理账户及各类机构账户不在参与范围内。",
         },
         {
           no: "02",
           q: "净入金如何计算？",
-          a: "活动周期内，客户账户累计入金总额减去累计出金总额。仅统计真实跨境 / 渠道入金；内部转账、账户资金互转、代理佣金不计入净入金。",
+          a: "活动期间累计入金减去累计出金。仅统计真实跨境或渠道入金，内部转账、账户互转及代理佣金不计入；多个账户不可合并计算。",
         },
         {
           no: "03",
           q: "哪些交易计入有效手数？",
-          a: "仅统计已平仓的标准手交易，零散手数合并计算。单笔订单持仓需满 3 分钟及以上；对冲交易量占总交易量比例不得超过 50%。套利、高频刷单、对倒、EA / API 高频自动交易等不计入并可能被判定违规。",
+          a: "仅统计持仓至少 3 分钟的已平仓标准手交易，零散手数可合并。对冲、套利、刷单等交易受条款限制，违规交易可能导致资格取消。",
         },
         {
           no: "04",
           q: "达标后出金会有影响吗？",
-          a: "达标客户的净入金须保持至活动结束且礼品兑换申请提交之时。若出金导致净入金低于已达标档位标准，平台有权取消或降级礼品兑换资格。",
+          a: "礼品发放完成前，如出金导致净入金低于对应档位标准，可能取消或降级兑换资格。活动期间及礼品发放完成前，账户须保持正常交易状态。",
         },
       ],
     },
+
     terms: {
-      index: "04 / 详细条款",
+      index: "04 / 活动细则",
       title: "活动条件与条款",
+      download: "下载完整条款",
       lead: "活动时间：2026 年 9 月 15 日 00:00 至 10 月 14 日 23:59（MT5 服务器时间，GMT+3）。下方完整列示活动条款。",
-      priority:
-        "本条款英文版本具备法律约束力，任何翻译文本仅供参考。中英文版本如有不一致之处，以英文版本为准。",
+      priority: "原文约定英文版本具有法律约束力。本页为中文活动内容，英文条款请联系平台获取。",
     },
     contact: {
       title: "联系 QUBE Markets 客服",
-      lead: "如对活动条款或活动内容有任何疑问，欢迎随时联系我们。",
+      lead: "如对本活动条款或活动内容有任何疑问",
       email: "support@qubemarkets.com",
-      hours: "官网在线客服：周一至周五，MT5 服务器时间 09:00–18:00",
+      hours: "周一至周五 · MT5 服务器时间 09:00–18:00",
       cta: "发邮件",
     },
     footer: {
       rights: "© 2026 QUBE Markets. All rights reserved.",
       legal:
-        "本活动由 Qube Markets Global Fintech Limited（注册编号 16389，昂儒昂离岸金融局牌照编号 L16389/QMGFL）主办。Apple Inc. 不是本次活动的赞助商、合作伙伴或管理员，也未以其他方式参与本次活动。Apple 及相关 Apple 产品名称是 Apple Inc. 的商标。差价合约（CFD）及保证金外汇交易具有高杠杆风险，可能导致损失全部本金。请勿仅为获取活动福利而进行存款或交易。",
+        "本活动由 Qube Markets Global Fintech Limited 主办。Apple Inc. 不是本次活动的赞助商、合作伙伴、管理员，也未以其他方式参与本次活动。Apple 及相关 Apple 产品名称是 Apple Inc. 的商标。",
+      legal2:
+        "礼品名称、规格及参考价值不构成具体产品承诺，最终以 Apple 正式发布及供货情况为准。主办方资料、适用法律及争议解决安排详见活动条款。",
     },
   },
   en: {
@@ -179,11 +193,28 @@ export const content = {
     gifts: {
       index: "02 / Reward tiers",
       title: "Six tiers, one clear view",
-      note: "Estimated values are projected USD overseas market prices for the relevant new Apple products, provided solely as a tier-matching reference. They are not official Apple prices. Rewards must be redeemed at the tier achieved; tiers cannot be combined or split.",
+      noteTitle: "About the rewards and images",
+      note: "Names, specifications and values for products not yet officially released are indicative, for tier and budget reference only, and are not a commitment to a specific model or configuration. The images below show existing product categories; the final rewards follow Apple's official release, pricing and availability.",
       tierLabel: "Tier",
       depositLabel: "Net deposit USD",
       lotsLabel: "Valid lots",
-      valueLabel: "Est. value",
+      lotsUnit: "lots",
+      taglines: [
+        "Everyday companion",
+        "Listen freely",
+        "Inspiration on your wrist",
+        "Explore further",
+        "A new perspective",
+        "Something extraordinary",
+      ],
+      imageNotes: [
+        "Existing product shown",
+        "Existing product shown",
+        "Existing product shown",
+        "Existing product shown",
+        "Existing product shown",
+        "iPhone category shown · non-foldable model",
+      ],
       names: [
         "Apple Official Accessories Bundle",
         "AirPods Pro 4",
@@ -194,61 +225,65 @@ export const content = {
       ],
       subs: [
         "MagSafe Charger + AirTag",
-        "2026 new model",
-        "Aluminium, GPS",
-        "Titanium",
-        "1TB · 2026 autumn model",
-        "Foldable, 256GB",
+        "2026 new model · indicative reward",
+        "Aluminium, GPS · indicative reward",
+        "Titanium · indicative reward",
+        "1TB · indicative reward",
+        "Foldable, 256GB · indicative reward",
       ],
       footnote:
-        "Each client may participate with one account only. Rewards are redeemed on a first-qualified, first-served basis while stocks last. Final eligibility is subject to Platform review. Estimated reward values are not cash-equivalent commitments.",
+        "Each client may participate with one account only. Rewards are redeemed on a first-qualified, first-served basis while stocks last. Final eligibility is subject to Platform review. Reward values are not cash-equivalent commitments.",
     },
     rules: {
       index: "03 / Key rules",
       title: "The rules, in plain terms",
       aside:
-        "A summary of the core rules. The complete Terms and Conditions are set out below.",
+        "From account eligibility to reward delivery, these conditions affect your redemption eligibility.",
+      link: "Read the full terms",
       items: [
         {
           no: "01",
           q: "Which accounts can take part?",
-          a: "The promotion is open to all clients in the Greater China region who are at least 18 years of age with full legal capacity. Standard and ECN accounts only; Cent, PAMM, MAM, Agent and all institutional accounts are excluded. Each client may use one account only.",
+          a: "The promotion is open to all clients in the Greater China region who are at least 18 years of age with full legal capacity. Standard and ECN accounts only; Cent, PAMM, MAM, Agent and all institutional accounts are excluded.",
         },
         {
           no: "02",
           q: "How is Net Deposit calculated?",
-          a: "Total cumulative deposits minus total cumulative withdrawals during the Promotion Period. Only genuine cross-border/channel deposits count; internal transfers, transfers between accounts and agent commissions are excluded.",
+          a: "Total cumulative deposits minus total cumulative withdrawals during the Promotion Period. Only genuine cross-border/channel deposits count; internal transfers, transfers between accounts and agent commissions are excluded, and multiple accounts cannot be combined.",
         },
         {
           no: "03",
           q: "Which trades count as valid lots?",
-          a: "Only closed standard-lot trades count, with partial lots aggregated. Each order must be held for at least 3 minutes. Hedging volume must not exceed 50% of total volume. Arbitrage, high-frequency sham trading, wash trading and EA/API high-frequency automated trading are excluded and may be treated as violations.",
+          a: "Only closed standard-lot trades held for at least 3 minutes count, with partial lots aggregated. Hedging, arbitrage and wash trading are restricted under the terms, and breaches may lead to disqualification.",
         },
         {
           no: "04",
           q: "Can I withdraw after qualifying?",
-          a: "Your Net Deposit must be maintained until the promotion ends and your redemption application is submitted. If a withdrawal takes your Net Deposit below the qualifying tier, the Platform may cancel or downgrade your redemption eligibility.",
+          a: "Before the reward is delivered, a withdrawal that takes your Net Deposit below the qualifying tier may cancel or downgrade your redemption eligibility. Your account must remain in normal trading status during the promotion and until the reward is delivered.",
         },
       ],
     },
     terms: {
       index: "04 / Full terms",
       title: "Terms and Conditions",
+      download: "Download full terms",
       lead: "Promotion Period: 00:00 on 15 September 2026 to 23:59 on 14 October 2026, MT5 Server Time (GMT+3). The complete terms are listed below.",
       priority:
         "The English version of these Terms and Conditions is legally binding. Any translated version is for reference only; in the event of inconsistency, the English version prevails.",
     },
     contact: {
       title: "Contact QUBE Markets support",
-      lead: "Any questions about the promotion or these terms? Get in touch.",
+      lead: "Any questions about the promotion or these terms?",
       email: "support@qubemarkets.com",
-      hours: "Live chat: Monday to Friday, 09:00–18:00 MT5 Server Time",
+      hours: "Monday to Friday · 09:00–18:00 MT5 Server Time",
       cta: "Email us",
     },
     footer: {
       rights: "© 2026 QUBE Markets. All rights reserved.",
       legal:
-        "This promotion is organized by Qube Markets Global Fintech Limited (company number 16389, licence no. L16389/QMGFL, Anjouan Offshore Finance Authority). Apple Inc. is not a sponsor, partner or administrator of, or otherwise associated with, this promotion. Apple and the relevant Apple product names are trademarks of Apple Inc. CFDs and margin FX trading carry a high level of leverage risk and may result in the loss of all capital. Do not deposit or trade solely to obtain a promotional benefit.",
+        "This promotion is organized by Qube Markets Global Fintech Limited. Apple Inc. is not a sponsor, partner or administrator of, or otherwise associated with, this promotion. Apple and the relevant Apple product names are trademarks of Apple Inc.",
+      legal2:
+        "Reward names, specifications and reference values are not a commitment to a specific product; the final rewards follow Apple's official release and availability. Organizer details, governing law and dispute resolution are set out in the Terms and Conditions.",
     },
   },
 } as const;
@@ -281,7 +316,7 @@ export const termsSections: Record<Lang, Section[]> = {
     },
     {
       no: "03",
-      title: "活动档位及礼品规则",
+      title: "活动档位及礼品规则（基于苹果 9 月 9 日发布会新品预售价设定）",
       body: [
         "档位判定：按活动周期内累计净入金总额与累计有效交易手数匹配最高达标档位，每位客户仅可兑换一档礼品，不支持多档叠加或组合兑换。",
         "净入金定义：活动周期内累计入金总额减累计出金总额，仅统计真实跨境 / 渠道入金，内部转账、账户资金互转、代理佣金不计入。",
