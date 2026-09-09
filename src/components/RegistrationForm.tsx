@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Check, Loader2, Send } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import { tiers, type Lang } from "@/content/promo";
+import { type Lang } from "@/content/promo";
+import { Button } from "@/components/ui/button";
 
 const copy = {
   zh: {
@@ -11,11 +12,8 @@ const copy = {
     email: "注册邮箱",
     phone: "联系电话",
     account: "交易账户号（MT4 / MT5）",
-    tier: "意向礼品档位",
-    tierPlaceholder: "请选择",
-    country: "所在国家 / 地区",
-    address: "收件地址",
-    note: "备注（选填）",
+    note: "备注（选填，可备注意向礼品）",
+    notePlaceholder: "例如：意向礼品为 Apple Watch Ultra 4",
     agree: "我已阅读并同意本次活动条款与细则。",
     submit: "提交登记",
     submitting: "提交中…",
@@ -32,11 +30,8 @@ const copy = {
     email: "Registered email",
     phone: "Phone number",
     account: "Trading account number (MT4 / MT5)",
-    tier: "Preferred reward tier",
-    tierPlaceholder: "Select a tier",
-    country: "Country / region",
-    address: "Delivery address",
-    note: "Notes (optional)",
+    note: "Notes (optional — you may note your preferred reward)",
+    notePlaceholder: "For example: Preferred reward — Apple Watch Ultra 4",
     agree: "I have read and agree to the promotion terms and conditions.",
     submit: "Submit registration",
     submitting: "Submitting…",
@@ -51,7 +46,7 @@ const copy = {
 const field =
   "mt-1.5 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none transition-colors focus:border-primary";
 
-export function RegistrationForm({ lang, tierNames }: { lang: Lang; tierNames: readonly string[] }) {
+export function RegistrationForm({ lang }: { lang: Lang }) {
   const c = copy[lang];
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
   const [error, setError] = useState<string | null>(null);
@@ -75,9 +70,9 @@ export function RegistrationForm({ lang, tierNames }: { lang: Lang; tierNames: r
       email: get("email"),
       phone: get("phone") || null,
       account_number: get("account_number"),
-      tier: get("tier") ? Number(get("tier")) : null,
-      country: get("country") || null,
-      address: get("address") || null,
+      tier: null,
+      country: null,
+      address: null,
       note: get("note") || null,
       lang,
     });
@@ -100,13 +95,14 @@ export function RegistrationForm({ lang, tierNames }: { lang: Lang; tierNames: r
         </span>
         <h3 className="mt-5 text-xl font-bold">{c.successTitle}</h3>
         <p className="mx-auto mt-2 max-w-sm text-sm text-muted-foreground">{c.successBody}</p>
-        <button
+        <Button
           type="button"
+          variant="outline"
           onClick={() => setStatus("idle")}
-          className="mt-6 rounded-full border border-border px-5 py-2.5 text-xs font-semibold transition-colors hover:border-primary"
+          className="mt-6 rounded-full px-5"
         >
           {c.again}
-        </button>
+        </Button>
       </div>
     );
   }
@@ -122,6 +118,10 @@ export function RegistrationForm({ lang, tierNames }: { lang: Lang; tierNames: r
           <input name="full_name" required className={field} autoComplete="name" />
         </label>
         <label className="block text-xs font-semibold">
+          {c.account} *
+          <input name="account_number" required className={field} inputMode="numeric" />
+        </label>
+        <label className="block text-xs font-semibold">
           {c.email} *
           <input name="email" type="email" required className={field} autoComplete="email" />
         </label>
@@ -129,32 +129,9 @@ export function RegistrationForm({ lang, tierNames }: { lang: Lang; tierNames: r
           {c.phone}
           <input name="phone" className={field} autoComplete="tel" />
         </label>
-        <label className="block text-xs font-semibold">
-          {c.account} *
-          <input name="account_number" required className={field} inputMode="numeric" />
-        </label>
-        <label className="block text-xs font-semibold">
-          {c.tier}
-          <select name="tier" defaultValue="" className={field}>
-            <option value="">{c.tierPlaceholder}</option>
-            {tiers.map((tier, i) => (
-              <option key={tier.id} value={tier.id}>
-                {`0${tier.id} · ${tierNames[i]}`}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="block text-xs font-semibold">
-          {c.country}
-          <input name="country" className={field} autoComplete="country-name" />
-        </label>
-        <label className="block text-xs font-semibold sm:col-span-2">
-          {c.address}
-          <input name="address" className={field} autoComplete="street-address" />
-        </label>
         <label className="block text-xs font-semibold sm:col-span-2">
           {c.note}
-          <textarea name="note" rows={3} className={field} />
+          <textarea name="note" rows={3} className={field} placeholder={c.notePlaceholder} />
         </label>
       </div>
 
@@ -170,14 +147,14 @@ export function RegistrationForm({ lang, tierNames }: { lang: Lang; tierNames: r
 
       {error && <p className="mt-4 text-xs font-semibold text-destructive">{error}</p>}
 
-      <button
+      <Button
         type="submit"
         disabled={status === "sending"}
-        className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground transition-transform hover:-translate-y-0.5 disabled:opacity-60"
+        className="mt-6 h-11 rounded-full px-6 font-bold transition-transform hover:-translate-y-0.5"
       >
         {status === "sending" ? <Loader2 className="size-4 animate-spin" /> : <Send className="size-4" />}
         {status === "sending" ? c.submitting : c.submit}
-      </button>
+      </Button>
     </form>
   );
 }
