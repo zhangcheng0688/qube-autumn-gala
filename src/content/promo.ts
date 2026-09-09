@@ -261,7 +261,7 @@ export const termsSections: Record<Lang, Section[]> = {
       no: "01",
       title: "总则",
       body: [
-        "活动主体：本活动由 Qube Markets Global Fintech Limited（注册编号 16389，依据科摩罗联盟昂儒昂离岸金融局法律注册设立，持 AOFA 牌照编号 L16389/QMGFL，注册地址 Boulevard de Coalancanthe, Muthusamudu, Anjouan, Union of Comoros，以下简称"平台/我方"）主办。Apple Inc. 不是本次活动的赞助商、合作伙伴、管理员，也未以其他方式参与本次活动。",
+        "活动主体：本活动由 Qube Markets Global Fintech Limited（注册编号 16389，依据科摩罗联盟昂儒昂离岸金融局法律注册设立，持 AOFA 牌照编号 L16389/QMGFL，注册地址 Boulevard de Coalancanthe, Muthusamudu, Anjouan, Union of Comoros，以下简称“平台/我方”）主办。Apple Inc. 不是本次活动的赞助商、合作伙伴、管理员，也未以其他方式参与本次活动。",
         "活动时间：MT5 服务器时间（GMT+3）2026 年 9 月 15 日 00:00 至 2026 年 10 月 14 日 23:59，以平台系统时间为准，逾期不再受理参与及兑换申请。",
         "活动效力：客户一经参与，即视为已完整阅读、理解并同意本条款、平台客户协议、风险披露声明及 QUBE Markets 全部现行规章制度。",
         "规则调整权：平台有权根据实际情况调整、暂停或终止本活动规则。受苹果新品实际发售、供货、价格波动影响，平台有权调整礼品实物与参考估值；发生重大变更时将通过官网公告、站内信或电子邮件告知，已达标客户不因规则变更丧失已获得的兑奖资格。本平台拥有最终解释权。",
