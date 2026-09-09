@@ -23,7 +23,7 @@ export const content = {
       title: "金秋臻耀礼遇",
       lead: "活动期内净入金与有效交易手数双重达标，即可申请对应档位 Apple 新品好礼。",
       periodLabel: "活动周期",
-      period: "2026.09.10 — 10.09",
+      period: "2026.09.15 — 10.14",
       periodNote: "MT5 服务器时间（GMT+3）00:00 至 23:59",
       cta: "查看礼遇档位",
       ctaSub: "报名参与",
@@ -52,7 +52,7 @@ export const content = {
         },
       ],
       deadline:
-        "报名须于 2026 年 10 月 9 日 23:59（MT4/MT5 服务器时间）前完成，逾期不再受理。未报名客户即使达标亦不具备兑换资格。",
+        "报名须于 2026 年 10 月 14 日 23:59（MT4/MT5 服务器时间）前完成，逾期不再受理。未报名客户即使达标亦不具备兑换资格。",
     },
     gifts: {
       index: "02 / 档位礼遇",
@@ -111,7 +111,7 @@ export const content = {
     terms: {
       index: "04 / 详细条款",
       title: "活动条件与条款",
-      lead: "活动时间：2026 年 9 月 10 日 00:00 至 10 月 9 日 23:59（MT5 服务器时间，GMT+3）。下方完整列示活动条款。",
+      lead: "活动时间：2026 年 9 月 15 日 00:00 至 10 月 14 日 23:59（MT5 服务器时间，GMT+3）。下方完整列示活动条款。",
       priority:
         "本条款英文版本具备法律约束力，任何翻译文本仅供参考。中英文版本如有不一致之处，以英文版本为准。",
     },
@@ -141,7 +141,7 @@ export const content = {
       title: "Autumn Exclusive Rewards",
       lead: "Meet both the Net Deposit and Valid Trading Volume requirements during the Promotion Period to claim the new Apple reward for your tier.",
       periodLabel: "Promotion period",
-      period: "10 Sep — 9 Oct 2026",
+      period: "15 Sep — 14 Oct 2026",
       periodNote: "00:00 to 23:59, MT5 Server Time (GMT+3)",
       cta: "View reward tiers",
       ctaSub: "Register now",
@@ -174,7 +174,7 @@ export const content = {
         },
       ],
       deadline:
-        "Registration must be completed by 23:59 on 9 October 2026 (MT4/MT5 server time). Late registrations are not accepted. Clients who fail to register are not eligible to redeem a reward, even if they meet the criteria.",
+        "Registration must be completed by 23:59 on 14 October 2026 (MT4/MT5 server time). Late registrations are not accepted. Clients who fail to register are not eligible to redeem a reward, even if they meet the criteria.",
     },
     gifts: {
       index: "02 / Reward tiers",
@@ -234,7 +234,7 @@ export const content = {
     terms: {
       index: "04 / Full terms",
       title: "Terms and Conditions",
-      lead: "Promotion Period: 00:00 on 10 September 2026 to 23:59 on 9 October 2026, MT5 Server Time (GMT+3). The complete terms are listed below.",
+      lead: "Promotion Period: 00:00 on 15 September 2026 to 23:59 on 14 October 2026, MT5 Server Time (GMT+3). The complete terms are listed below.",
       priority:
         "The English version of these Terms and Conditions is legally binding. Any translated version is for reference only; in the event of inconsistency, the English version prevails.",
     },
