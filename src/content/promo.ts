@@ -288,7 +288,7 @@ export const termsSections: Record<Lang, Section[]> = {
         "名额规则：受苹果新品首发产能限制，礼品数量有限，遵循先达标、先兑换、兑完即止原则；若对应新品缺货，平台可提供同价值苹果系备选礼品。",
         "重复参与：同一客户、同一身份信息、同一银行卡 / 收款渠道、同一 IP 地址、同一设备指纹下的多个账户仅认定为一个参与主体，仅可兑换一份礼品。",
         "礼品不可折现：所有礼品均以实物形式发放，不支持折现、抵扣交易保证金、转换为账户信用金或交易赠金。",
-        "礼品价值确认：预估价值基于 2026 年 9 月 14 日苹果秋季发布会新品预估价设定，最终以苹果官方发售价格为准；如实际售价与预估价值偏差超过 ±20%，平台有权在同等价值范围内调整对应档位礼品型号。",
+        "礼品价值确认：预估价值基于 2026 年 9 月 9 日苹果秋季发布会新品预估价设定，最终以苹果官方发售价格为准；如实际售价与预估价值偏差超过 ±20%，平台有权在同等价值范围内调整对应档位礼品型号。",
       ],
     },
     {
@@ -384,7 +384,7 @@ export const termsSections: Record<Lang, Section[]> = {
         "Availability: Due to limited initial production capacity, rewards are limited in quantity and allocated on a first-qualified, first-redeemed basis until stocks are exhausted. If a product is unavailable, the Platform may provide an alternative Apple product of equivalent value.",
         "Duplicate participation: Multiple accounts linked to the same client, identity, bank card/payment channel, IP address or device fingerprint are treated as one participant and may redeem only one reward.",
         "No cash alternative: All rewards are provided in physical form and cannot be exchanged for cash, used to offset trading margin, or converted into account credit or trading bonuses.",
-        "Value confirmation: Estimated values are based on projected prices from the Apple event of 14 September 2026; the official Apple retail price prevails. Where the actual price deviates from the estimate by more than \u00B120%, the Platform may adjust the reward model within an equivalent value range.",
+        "Value confirmation: Estimated values are based on projected prices from the Apple event of 9 September 2026; the official Apple retail price prevails. Where the actual price deviates from the estimate by more than \u00B120%, the Platform may adjust the reward model within an equivalent value range.",
       ],
     },
     {
