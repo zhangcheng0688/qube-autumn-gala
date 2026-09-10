@@ -10,7 +10,7 @@ import {
 import { content, termsSections, tiers, type Lang } from "@/content/promo";
 import { RegistrationForm } from "@/components/RegistrationForm";
 import heroProducts from "@/assets/hero-products-v2.png.asset.json";
-import heroBg from "@/assets/hero-bg-glow.jpg.asset.json";
+import heroBg from "@/assets/hero-bg-highres.png.asset.json";
 import gift1 from "@/assets/gift-1-new.jpg";
 import gift2 from "@/assets/gift-2-new.jpg";
 import gift3Asset from "@/assets/apple-watch-series-12.png.asset.json";
@@ -245,7 +245,7 @@ function Promo() {
             <p className="mt-5 text-sm text-muted-foreground">{t.join.cards[0].body}</p>
             <a
               href={registrationEmailHref}
-              className="mt-1 inline-block text-lg font-bold underline decoration-primary decoration-2 underline-offset-4"
+              className="mt-1 inline-block border-b-2 border-primary pb-0.5 text-lg font-bold leading-none"
             >
               {t.join.cards[0].email}
             </a>
