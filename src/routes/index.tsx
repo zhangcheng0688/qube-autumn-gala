@@ -10,6 +10,7 @@ import {
 import { content, termsSections, tiers, type Lang } from "@/content/promo";
 import { RegistrationForm } from "@/components/RegistrationForm";
 import heroProducts from "@/assets/hero-products-v2.png.asset.json";
+import heroBg from "@/assets/hero-bg-glow.jpg.asset.json";
 import gift1 from "@/assets/gift-1-new.jpg";
 import gift2 from "@/assets/gift-2-new.jpg";
 import gift3Asset from "@/assets/apple-watch-series-12.png.asset.json";
@@ -137,7 +138,10 @@ function Promo() {
   return (
     <div className="min-h-screen bg-background font-sans">
       {/* Header + hero */}
-      <header className="bg-ink text-ink-foreground">
+      <header
+        className="relative bg-ink bg-cover bg-bottom bg-no-repeat text-ink-foreground"
+        style={{ backgroundImage: `url(${heroBg.url})` }}
+      >
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5">
           <Logo />
           <div className="hidden items-center gap-8 text-sm text-ink-muted md:flex">
@@ -171,7 +175,7 @@ function Promo() {
             <p className="text-lg font-medium tracking-wide text-ink-foreground/80">
               {t.hero.kicker}
             </p>
-            <h1 className="mt-3 text-5xl font-black leading-[1.05] tracking-tight text-gold sm:text-6xl lg:text-7xl">
+            <h1 className="mt-3 text-4xl font-semibold leading-[1.1] tracking-tight text-gold sm:text-5xl lg:text-6xl">
               {t.hero.title}
             </h1>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-ink-muted">{t.hero.lead}</p>
@@ -206,15 +210,14 @@ function Promo() {
             </p>
           </div>
 
-          <div>
+          <div className="flex justify-center">
             <img
               src={heroProducts.url}
               alt={lang === "zh" ? "Apple 新品礼遇示意图" : "Apple reward products"}
               width={900}
               height={860}
-              className="w-full"
+              className="w-[78%] max-w-[520px] lg:w-[88%]"
             />
-            <p className="mt-2 text-center text-[11px] text-ink-muted/70">{t.hero.imageNote}</p>
           </div>
         </div>
       </header>
@@ -326,9 +329,7 @@ function Promo() {
                     className="h-full w-full object-contain"
                   />
                 </div>
-                <p className="px-5 pb-4 pt-1 text-[10px] text-muted-foreground">
-                  {t.gifts.imageNotes[i]}
-                </p>
+                <div className="pb-4" />
                 <div className="border-t border-border px-5 py-5">
                   <h3 className="text-lg font-bold">{t.gifts.names[i]}</h3>
                   <p className="mt-1 text-xs text-muted-foreground">{t.gifts.subs[i]}</p>
