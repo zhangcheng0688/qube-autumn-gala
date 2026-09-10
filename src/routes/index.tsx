@@ -208,10 +208,10 @@ function Promo() {
 
           <div>
             <img
-              src={heroDevices}
+              src={heroProducts.url}
               alt={lang === "zh" ? "Apple 新品礼遇示意图" : "Apple reward products"}
-              width={1408}
-              height={1200}
+              width={900}
+              height={860}
               className="w-full"
             />
             <p className="mt-2 text-center text-[11px] text-ink-muted/70">{t.hero.imageNote}</p>
