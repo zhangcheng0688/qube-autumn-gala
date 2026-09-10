@@ -85,7 +85,7 @@ export const content = {
         "2026 新款 · 拟定礼品",
         "铝金属 GPS 版 · 拟定礼品",
         "钛金属 · 拟定礼品",
-        "1TB · 拟定礼品",
+        "拟定礼品",
         "折叠屏 256GB · 拟定礼品",
       ],
       footnote:
@@ -228,7 +228,7 @@ export const content = {
         "2026 new model · indicative reward",
         "Aluminium, GPS · indicative reward",
         "Titanium · indicative reward",
-        "1TB · indicative reward",
+        "Indicative reward",
         "Foldable, 256GB · indicative reward",
       ],
       footnote:
