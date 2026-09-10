@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import { content, termsSections, tiers, type Lang } from "@/content/promo";
 import { RegistrationForm } from "@/components/RegistrationForm";
-import heroProducts from "@/assets/hero-products-hd.png.asset.json";
+import heroProducts from "@/assets/hero-products-v2.png.asset.json";
 import gift1 from "@/assets/gift-1-new.jpg";
 import gift2 from "@/assets/gift-2-new.jpg";
 import gift3Asset from "@/assets/apple-watch-series-12.png.asset.json";
