@@ -12,14 +12,14 @@ import { RegistrationForm } from "@/components/RegistrationForm";
 import heroDevices from "@/assets/hero-devices-final.jpg";
 import gift1 from "@/assets/gift-1-new.jpg";
 import gift2 from "@/assets/gift-2-new.jpg";
-import gift3 from "@/assets/gift-3-new.jpg";
-import gift4 from "@/assets/gift-4-new.jpg";
-import gift5 from "@/assets/gift-5-new.jpg";
-import gift6 from "@/assets/gift-6-new.jpg";
+import gift3Asset from "@/assets/apple-watch-series-12.png.asset.json";
+import gift4Asset from "@/assets/apple-watch-ultra-4.png.asset.json";
+import gift5Asset from "@/assets/iphone-18-pro-max.png.asset.json";
+import gift6Asset from "@/assets/iphone-ultra.png.asset.json";
 import qubeLogo from "@/assets/qube-logo.png.asset.json";
 import { Button } from "@/components/ui/button";
 
-const giftImages = [gift1, gift2, gift3, gift4, gift5, gift6];
+const giftImages = [gift1, gift2, gift3Asset.url, gift4Asset.url, gift5Asset.url, gift6Asset.url];
 
 const SITE = "https://qubemarkets.com";
 
@@ -78,7 +78,7 @@ const jsonLd = {
           name: "有哪些礼品档位？",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "共六档：Apple 官方配件礼包、AirPods Pro 4、Apple Watch Series 12、Apple Watch Ultra 4、iPhone 18 Pro Max 1TB、iPhone Ultra 折叠屏 256GB。礼品价值为预估参考价，非官方定价。",
+            text: "共六档：Apple 官方配件礼包、AirPods Pro 4、Apple Watch Series 12、Apple Watch Ultra 4、iPhone 18 Pro Max、iPhone Ultra 折叠屏 256GB。礼品价值为预估参考价，非官方定价。",
           },
         },
       ],
@@ -323,7 +323,7 @@ function Promo() {
                     width={1024}
                     height={768}
                     loading="lazy"
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain"
                   />
                 </div>
                 <p className="px-5 pb-4 pt-1 text-[10px] text-muted-foreground">
