@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import { content, termsSections, tiers, type Lang } from "@/content/promo";
 import { RegistrationForm } from "@/components/RegistrationForm";
-import heroDevices from "@/assets/hero-devices-final.jpg";
+import heroProducts from "@/assets/hero-products.png.asset.json";
 import gift1 from "@/assets/gift-1-new.jpg";
 import gift2 from "@/assets/gift-2-new.jpg";
 import gift3Asset from "@/assets/apple-watch-series-12.png.asset.json";
@@ -208,10 +208,10 @@ function Promo() {
 
           <div>
             <img
-              src={heroDevices}
+              src={heroProducts.url}
               alt={lang === "zh" ? "Apple 新品礼遇示意图" : "Apple reward products"}
-              width={1408}
-              height={1200}
+              width={900}
+              height={860}
               className="w-full"
             />
             <p className="mt-2 text-center text-[11px] text-ink-muted/70">{t.hero.imageNote}</p>
