@@ -31,7 +31,14 @@ const giftImages = [gift1, gift2, gift3Asset.url, gift4Asset.url, gift5Asset.url
 
 function Logo({ className = "h-8 w-auto" }: { className?: string }) {
   return (
-    <img src={qubeLogo.url} alt="QUBE Markets" width={793} height={197} className={className} />
+    <a
+      href="https://www.qubemarkets.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="QUBE Markets 官网"
+    >
+      <img src={qubeLogo.url} alt="QUBE Markets" width={793} height={197} className={className} />
+    </a>
   );
 }
 
