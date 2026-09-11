@@ -23,7 +23,7 @@ const jsonLd = {
       endDate: "2026-10-14T23:59:00+03:00",
       eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
       eventStatus: "https://schema.org/EventScheduled",
-      location: { "@type": "VirtualLocation", url: `${SITE}/` },
+      location: { "@type": "VirtualLocation", url: `${SITE}/promotions/0915` },
       organizer: { "@type": "Organization", name: "QUBE Markets", url: SITE },
     },
     {
@@ -66,7 +66,7 @@ const jsonLd = {
   ],
 };
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/promotions/0915")({
   head: () => ({
     meta: [
       { title: "Qube × Apple 金秋臻耀礼遇 | 六档 Apple 好礼 | QUBE Markets" },
@@ -91,8 +91,8 @@ export const Route = createFileRoute("/")({
       { property: "og:site_name", content: "QUBE Markets" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
     ],
-    links: [{ rel: "canonical", href: `${SITE}/` }],
+    links: [{ rel: "canonical", href: `${SITE}/promotions/0915` }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
   }),
-  component: () => <PromoLanding canonicalPath="/" />,
+  component: () => <PromoLanding canonicalPath="/promotions/0915" />,
 });
